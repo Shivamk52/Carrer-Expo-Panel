@@ -1,4 +1,6 @@
- Apply to Summer Intern, Distribution Associate, Flight Attendant and more!
+## Carrer Expo Panel
+An open source online job portal.
+Apply to Summer Intern, Distribution Associate, Flight Attendant and more!
 
 ## Installation
 * Download or clone this repository
