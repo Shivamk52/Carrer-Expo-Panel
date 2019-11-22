@@ -1,0 +1,116 @@
+<html>
+<head>
+{% load staticfiles %}
+<style type="text/css">
+	h1{
+		color:gray;
+		font-size:40px;
+		font-family: -webkit-pictograph;
+		margin-top:300px;
+		text-transform: capitalize;
+	}
+
+		table{
+			height:400px;
+			width:80%;
+			width:100%;
+			border-collapse: 0px;
+			margin-top:20px;
+			border:5px solid gray;
+			color:black;
+            border:5px gray;
+			font-family:serif;
+			}
+			th{
+				border:2px solid lightblue;
+				font-size:20px;
+				font-family:-webkit-pictograph;
+			border-collapse: 0px;
+				border-left: :1px solid lightblue;
+				border-top:1px solid lightblue;
+				border-right:1px solid lightblue;
+			    border-bottom:2px solid black;
+			}
+			td{
+               color:black;
+               text-align: center;
+				border-left: :1px solid lightgray;
+				border-top:1px solid lightgray;
+				border-right:1px solid lightgray;
+			    border-bottom:1px solid black;
+               font-size:20px;
+			}
+			tr:nth-child(odd){
+				background-color:lightblue;
+				height:30px;
+			}
+			tr:nth-child(even){
+				background-color: lightgray;
+				height:30px;
+			}
+		
+	.apply{
+		border:2px solid lightblue;
+		text-decoration:none;
+		color:gray;
+		font-weight:bold;
+		padding:10px;
+	}
+	.apply:hover{
+		color:blue;
+	}
+
+	.comm{
+		background-repeat:no-repeat;
+		height:300px;
+		width:100%;	
+		position:absolute;
+		margin-left:-5px;
+		margin-top:-22px;
+	}
+	
+	</style>
+</head>
+<body>
+{% include 'template/userpage1.html'%}
+<img src="{% static 'my/c7.png' %}" class="comm">
+	<center><h1>Show All Jobs</h1>
+	<table cellspacing="0px">
+		<tr>
+			<th>Company-Name</th>
+			<th>Job-Tittle</th>
+			<th>Job-Location</th>
+			<th>Job-Profile</th>
+			<th>Timming</th>
+			<th>Qualification</th>
+			<th>Skills</th>
+			<th>experience</th>
+			<th>Salary</th>
+			<th>Apply Job</th>
+		</tr>
+		{% for single in alldata %}
+		<tr>
+			<td>{{ single.coname }}</td>
+			<td>{{ single.tittle }}</td>
+			<td>{{ single.Location }}</td>
+			<td>{{ single.Profile }}</td>
+			<td>{{ single.timming }}</td>
+			<td>{{ single.qual }}</td>
+			<td>{{ single.skills }}</td>
+			<td>{{ single.exp }}</td>
+			<td>{{ single.salary }}</td>
+			<td>
+				<form action="/apply/" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="t1" value="{{ single.id }}">
+					<input type="hidden" name="t2" value="{{ email }}">
+					<input type="submit" value="Apply" class="apply" style="cursor:pointer">
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</head>
+</html>

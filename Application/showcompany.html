@@ -1,0 +1,33 @@
+<html>
+<head>
+<body>
+	<center><h1>All Companies</h1>
+	<table height="400px" width="1200px" border="5px " cellspacing="0px" >
+		<tr>
+			<th>Company-Name</th>
+			<th>Contact-Name</th>
+			<th>Email-Id</th>
+			<th>Contact No.</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Photo</th>
+	
+		</tr>
+		{% for single in alldata %}
+		<tr>
+			<th>{{ single.comname }}</th>
+			<th>{{ single.conname }}</th>
+			<th>{{ single.Email }}</th>
+			<th>{{ single.contact}}</th>
+			<th>{{ single.city }}</th>
+			<th>{{ single.Photo }}</th>
+			<th>{{ single.state }}</th>
+			<th>{{ single.pincode }}</th>
+			<th><img src="{{ single.photo.url }}" height="80" width="80"></th>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</head>
+</html>

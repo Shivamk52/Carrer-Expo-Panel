@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+ {% load staticfiles %}	
+<style type="text/css">
+	.nav{
+		height:80px;
+		width:100%;
+		margin:0px auto;
+		font-weight:bold; 
+		margin-top:10px;
+		margin-right:80px;	
+	}
+	ol{
+		list-style-type:none;
+		margin-right:-17px;
+		margin-top:-91px;
+	}
+	ol>li
+	{
+		display:inline-block;
+		
+	}
+	ol>li>a{
+
+	color:#504444;
+    padding:15px;
+    font-size:18px;
+    height:10px;
+    font-family:monospace;
+    z-index:9999999;
+    text-decoration: none;
+
+	}
+	a:hover{
+       text-shadow:black;
+       text-decoration:underline blue;
+     	}
+	.active{
+   
+    text-decoration:underline blue;
+    
+	}
+	
+    .oo{
+     	font-size:15px;
+     	padding:8px;
+     	border:2px solid lightblue;
+     	border-radius:20px;
+     	background:#c4e5f1d1;
+     	margin-left:30px;
+     	text-decoration:none;
+      }
+      .title {
+	  z-index: 9999;
+      font-size:59px;
+      margin-top:320px;
+      text-shadow: 2px 2px 4px black;
+      position:relative;
+      margin-left:240px;
+      color:black;
+	}
+	p{
+		font-size:35px;
+		font-weight:bold;
+		font-family:cursive;
+	}
+	.com{
+		background-repeat:no-repeat;
+		height:400px;
+		width:100%;	
+		margin-top:5px;
+	}
+	.oo{
+     	font-size:15px;
+     	padding:8px;
+     	border:2px solid lightblue;
+     	border-radius:20px;
+     	background:#c4e5f1d1;
+     	margin-left:30px;
+     	text-decoration:none;
+      }
+</style>
+</head>
+<body>	
+	<h1>Welcome :- {{ username }}</h1>
+	<a href="/logout/">Logout</a>
+<p>ONLINE<br>Job Fair System</p><br>
+<div class="nav">
+<center>	
+<ol>
+<li><a href="add.html" class="active">ADD JOB</a></li>
+<li><a href="profile.html">ADD EVENT</a></li>
+<li><a href="/gallery/">ADD IMAGES</a></li>
+<li><a href="/company/">EDIT PROFILE</a></li>
+<li><a href="/feedback/">CONTACT US</a></li
+<a href="/signup/" class="oo">LOGOUT</a></ol>
+<img src="{% static 'com.jpg' %}" class="com">
+</center>
+</div>
+</body>
+</html>

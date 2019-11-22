@@ -1,0 +1,121 @@
+<html>
+<head>
+<style>
+{% load staticfiles %}
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;  
+}
+body{
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.nav1{
+	height:470px;
+	width:400px;
+	background-color:rgba(0,0,0,0.4);
+	color:#fff;
+	top:15%;
+    margin-left:480px;
+    position:absolute;
+}
+
+.mavi input[type="text"]{
+	font-size:18px;
+	width:230px;
+	height:30px;
+	font-color:cyan;
+}
+
+.mavi input[type="password"]{
+	font-size:18px;
+	width:230px;
+	height:30px;
+}
+.mavi input[type="submit"]{
+	font-size:20px;
+	width:150px;
+	height:40px;
+	background: #EC1075;
+	color:white;
+	font-weight:bold;
+	border-radius:10px;
+}
+.mavi input[type="submit"]:hover{
+	background:#EC1075;
+	color:black;
+	}
+	.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:125px;
+	border-radius:50%;
+	margin-top:-90px;
+}
+.b{
+	font-size:30px;
+}
+.b2{
+	font-size:30px;
+	margin-top:-30px;
+	
+}
+.b3{
+	font-size:30px;
+}
+p{
+	font-size:20px;
+}
+.new{
+	font-size:25px;
+	color:white;
+	display:block;
+	width:270px;
+	padding:20px; 
+	margin-top:-30px;
+	margin-left:50px;
+	background:#EC1075;
+}
+.new: hover{
+	background: #EC1075;
+	color:black;
+}
+		a{
+		font-family:EffraLight;
+		color:gray;
+		margin-left:110px;
+		margin-top:130px;
+		cursor:pointer;
+		font-size:20px;
+	}
+	a:hover{
+		color:#EC1075;
+	}
+</style>
+</head>
+
+<body background="{% static 'gallery/9.jpg' %}" ><br/>
+
+	<a href="/code/" ><b>HOME</b></a>
+<div class="nav1">
+<img src="{% static 'gallery/99.jpg' %}" class="pp"><br/><br/><br/><br/>
+	<h1><center>STUDENT LOGIN</center><h1><br/>
+		<p>{{ msg }} </p>
+<form class="mavi" method="POST" action="/showuser/"><center>
+	{% csrf_token %}
+<span class="b">Email ID:</span>
+<input type="text" name="t1" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br/><br/>
+<span class="b">Password:</span>
+<input type="password" name="t2" value="" pattern=".{6,}" title="Six or more characters"><br/><br/>
+<input type="submit"  name="t3" value="SUBMIT"><br><br/>
+</center>
+</form><br>
+<a href="/signup/" class="new"><center>New User Click here!</center></a>
+
+</form><br>
+
+</body>
+</html>

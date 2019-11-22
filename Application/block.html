@@ -1,0 +1,53 @@
+<html>
+<head>
+</head>
+	<style>
+	{% load staticfiles %}
+	.com{
+	
+		height:500px;
+		width:1200px;	
+		position:relative;
+		margin-left:-150px;
+		margin-top:50px;
+	}
+	
+     .tittle 
+	 {
+	  z-index: 9999;
+      font-size:69px;
+      margin-top:-280px;
+      text-shadow: 2px 2px 4px white;
+      position:relative;
+      margin-left:-1200px;
+      text-transform: capitalize;
+      color:black;
+	}
+	#w{
+		font-size:110px;
+	}
+	#c{
+		font-size:30px;
+		margin-left:1300px;
+	
+	}
+	.round{
+
+		height:400px;
+        position:absolute;
+		width:25%;
+		top:180px;
+		left:750;
+		z-index: 9999;
+		border-radius:50%;
+	}
+</style>
+<body>
+<div>
+<img src="{% static 'gallery/wel1.jpg' %}" class="com">
+<img src="{% static 'gallery/q.jpg' %}" class="round">
+<h2 class="tittle">  <span id="w">W</span>elcome <br><span id="w">C</span>ompany<br> <span id="c">To Choose a Better One From amongs!!!!!</span></h2>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+<head>
+{% load staticfiles %}
+<style type="text/css">
+	h1{
+		color:gray;
+		font-size:40px;
+		margin-top:50px;
+		text-transform: capitalize;
+	}
+
+		table{
+			height:300px;
+			width:80%;
+			width:100%;
+			margin-top:20px;
+			border:5px solid gray;
+			color:black;
+            border:5px gray;
+			font-size:30px;
+			font-family:cursive;
+			}
+			th{
+				border-left: :1px solid lightblue;
+				border-top:1px solid lightblue;
+				border-right:1px solid lightblue;
+			    border-bottom:2px solid black;
+				font-size:20px;
+				height:60px;
+				font-family: serif;
+			}
+			td{
+               color:black;
+				border-left:1px solid lightgray;
+				border-top:1px solid lightgray;
+				border-right:1px solid lightgray;
+			    border-bottom:1px solid black;
+               text-align: center;
+               font-family: serif;
+               font-size:15px;
+			}
+			tr:nth-child(odd){
+				background-color:lightblue;
+				height:20px;
+			}
+			tr:nth-child(even){
+				background-color: lightgray;
+				height:30px;
+			}
+	.apply{
+		border:2px solid lightblue;
+		text-decoration:none;
+		color:gray;
+		font-weight:bold;
+		padding:10px;
+	}
+	.apply:hover{
+		color:blue;
+	}
+	.comm{
+	
+		height:400px;
+		width:100%;	
+		position:relative;
+		margin-left:0px;
+	
+	}
+	</style>
+<body>
+{% include 'template/comm2.html'%}
+<img src="{% static 'my/c2.png' %}" class="comm">
+</div>
+	<center><h1>Show All Jobs</h1>
+	<table cellspacing="0px">
+		<tr>
+		
+			<th>Company-Name</th>
+			<th>Job-Tittle</th>
+			<th>Job-Location</th>
+			<th>Job-Profile</th>
+			<th>Timming</th>
+			<th>Quali.</th>
+			<th>experience</th>
+			<th>Salary</th>
+			<th>Show Resume</th>
+			<th>Delete</th>
+			<th>Edit</th>
+
+		</tr>
+		{% for single in alldata %}
+		<tr>
+	
+			<td>{{ single.coname }}</td>
+			<td>{{ single.tittle }}</td>
+			<td>{{ single.Location }}</td>
+			<td>{{ single.Profile }}</td>
+			<td>{{ single.timming }}</td>
+			<td>{{ single.qual }}</td>
+			<td>{{ single.exp }}</td>
+			<td>{{ single.salary }}</td>
+			<td>
+				<form action="/showresume/" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="t1" value="{{ single.id }}">
+					<input type="submit" value="Show" class="apply">
+				</form>
+			</td>
+
+			<td>
+				<form action="/deletejob/" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="t1" value="{{ single.id }}">
+					<input type="submit" value="" class="apply" style="cursor:pointer;background:url({% static 'my/del.png' %}) left !important;
+					background-size: 100% !important; height: 40px;width:40px;background-repeat: no-repeat !important; ">
+				</form>
+			</td>
+
+			<td>
+				<form action="/editjob/" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="t1" value="{{ single.id }}">
+					<input type="submit" value="" class="apply" style="cursor:pointer;background:url({% static 'my/edit.png' %}) left !important;
+					background-size: 100% !important; height: 50px;width:40px;background-repeat: no-repeat !important; ">
+				</form>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</head>
+</html>

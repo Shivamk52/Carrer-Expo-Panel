@@ -1,0 +1,117 @@
+<html>
+<head>
+	{% load staticfiles %}
+<style type="text/css">
+      h1{
+		color:gray;
+		font-size:40px;
+		font-family:serif;
+		margin-top:400px;
+		text-transform: capitalize;
+	}
+
+		table{
+			height:500px;
+			width:80%;
+			width:100%;
+			margin-top:20px;
+			border:5px solid gray;
+			color:black;
+            border:5px gray;
+			font-size:25px;
+			font-family:serif;
+			}
+			th{
+				
+				border-left: :1px solid lightblue;
+				border-top:1px solid lightblue;
+				border-right:1px solid lightblue;
+			    border-bottom:2px solid black;
+			    font-size:20px;
+			    border-collapse: 0px;
+				color:black;
+
+			}
+			td{
+               color:black;
+				border-left:1px solid lightgray;
+				border-top:1px solid lightgray;
+				border-right:1px solid lightgray;
+				border-collapse: 0px;
+			    border-bottom:1px solid black;
+               text-align: center;
+               font-size:20px;
+			}
+			tr:nth-child(odd){
+				background-color:lightblue;
+				height:40px;
+			}
+			tr:nth-child(even){
+				background-color:lightgray;
+				height:40px;
+			}
+
+	.apply{
+		border:2px solid lightblue;
+		text-decoration:none;
+		color:gray;
+		font-weight:bold;
+		padding:10px;
+	}
+	.apply:hover{
+		color:blue;
+	}
+	
+	
+	.comm{
+		background-repeat:no-repeat;
+		height:400px;
+		width:100%;	
+		position:absolute;
+		margin-left:-5px;
+		margin-top:-25px;
+	}
+</style>
+</head>
+<body>
+    {% include 'template/userpage1.html'%}
+    <img src="{% static 'my/cam11.png' %}" class="comm"><br/>
+	<center><h1>All Upcoming Events</h1>
+	<table cellspacing="0px" >
+		<tr>
+			<th>Company-Name</th>
+			<th>Email-Id</th>
+			<th>Event-Location</th>
+			<th>Event-Profile</th>
+			<th>Event-Date</th>
+			<th>Qualification-Required</th>
+			<th>Event-Des.</th>
+			<th>Event-Holder</th>
+			<th>Contact No.</th>
+			<th>Apply</th>
+	
+		</tr>
+		{% for single in alldata %}
+		<tr>
+			<td>{{ single.cname }}</td>
+			<td>{{ single.email }}</td>
+			<td>{{ single.Location }}</td>
+			<td>{{ single.Profile }}</td>
+			<td>{{ single.date }}</td>
+			<td>{{ single.qual }}</td>
+			<td>{{ single.des }}</td>
+			<td>{{ single.holder}}</td>
+			<td>{{ single.con }}</td>
+			<td><form action="/applyevent/" method="post">
+					{% csrf_token %}
+					<input type="hidden" name="t1" value="{{ single.id }}">
+					<input type="submit" value="Apply" class="apply" style="cursor: pointer;">
+				</form>
+			</td>	
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</head>
+</html>

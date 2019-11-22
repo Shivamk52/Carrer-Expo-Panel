@@ -1,0 +1,124 @@
+<html>
+<head>
+<style type="text/css">
+{% load staticfiles %}
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+   
+}
+.nav{
+	height:600px;
+	width:800px;
+	background-color:rgba(0,0,0,0.4);
+	color:#fff;
+	top:10%;
+    left:20%;
+    position:absolute;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:30px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:300px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="number"]{
+	font-size:20px;
+	width:300px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:20px;
+	font-color:cyan;
+}
+
+.mavi input[type="password"]{
+	font-size:20px;
+	margin-left:300px;
+	margin-top:-30px;
+	width:300px;
+	height:30px;
+}
+
+.mavi input[type="radio"]{
+	font-size:20px;
+	width:20px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:30px;
+	padding:20px;
+	margin-left:30px;
+}
+.mavi input[type="file"]{
+     margin-left:290px;
+     margin-top:-50px;
+     font-size:23px;
+     font-family: monospace;
+	}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-weight:bold;
+	font-color:lightblue;
+	margin-top:-30px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:lightblue;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:25px;
+	margin-left:60px;
+}
+</style>
+</head>
+<body  background="{% static 'gallery/wel1.jpg' %}">
+<div class="nav">
+<img src="{% static 'my/cam3.jpg' %}" class="pp"><br/><br><br/><br/>
+	{% for single in alldata %}
+	<h1><center>COMPANY SIGNUP</center><h1><br/>
+	<form action="/final/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">Company Name:</span>
+	<input type="text" name="t1" value="{{ single.comname }}" class="a">
+	<span class="b">Contact Name:</span>
+	<input type="text" name="t2" value="{{ single.conname }}" class="a">
+	<span class="b">Email Id:</span>
+	<input type="text" name="t3" value="{{ single.Email }}" class="a" disabled="disabled">
+	<input type="hidden" name="t3" value="{{ single.Email }}" class="a">
+	<span class="b">Password:</span>
+	<input type="password" name="t4" value="{{ single.pwd }}" class="a">
+	<span class="b">Contact No.:</span>
+	<input type="number" name="t5" value="{{ single.contact }}" class="a">
+	<span class="b">City:</span>
+	<input type="text" name="t6" value="{{ single.city }}" class="a"><br><br/>
+	<input type="submit" value="SUBMIT">
+	</form>
+	{% endfor %}
+</body>
+</html>

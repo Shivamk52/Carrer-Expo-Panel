@@ -1,0 +1,118 @@
+<html>
+<head>
+<style type="text/css">
+{% load staticfiles %}
+	<link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css"/>
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+   
+}
+.nav{
+	height:500px;
+	width:800px;
+	background-color:rgba(0,0,0,0.7);
+	color:#fff;
+	top:10%;
+    left:20%;
+    position:absolute;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:40px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:300px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="number"]{
+	font-size:20px;
+	width:300px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:20px;
+	font-color:cyan;
+}
+
+.mavi input[type="password"]{
+	font-size:20px;
+	margin-left:300px;
+	margin-top:-30px;
+	width:300px;
+	height:30px;
+}
+
+.mavi input[type="radio"]{
+	font-size:20px;
+	width:20px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:30px;
+	padding:20px;
+	margin-left:30px;
+}
+.mavi input[type="file"]{
+     margin-left:290px;
+     margin-top:-50px;
+     font-size:23px;
+     font-family: monospace;
+	}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-weight:bold;
+	font-color:lightblue;
+	margin-top:-30px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:lightblue;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:30px;
+	margin-left:60px;
+}
+</style>
+</head>
+<body  background="{% static 'gallery/wel1.jpg' %}">
+<div class="nav">
+<img src="{% static 'gallery/q2.jpg' %}" class="pp"><br/><br><br/><br/>
+	<h1><center>Apply Here</center><h1><br/>
+	<form action="/apply2/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">Job Id:</span>
+	<input type="text" name="t1" value="{{ data }}" class="a" disabled="disabled">
+	<input type="hidden" name="t1" value="{{ data }}" class="a">
+	<input type="hidden" name="t4" value="{{ data2 }}">
+	<span class="b">Experience:</span>
+	<input type="number" name="t2" value="" required="required" class="a"><br>
+	<span class="b">Upload Resume:</span>
+	<input type="File" name="t3" value="" required="required" class="a"><br/>
+	<input type="submit" value="SUBMIT">
+</body>
+</html>

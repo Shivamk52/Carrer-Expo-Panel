@@ -1,0 +1,100 @@
+<html>
+<head>
+	<title>My job fair</title>
+    {% load staticfiles %}
+	<link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css"/>
+<style>
+	.mar{
+		color:#EC1075;
+	}
+	.mar:hover{
+		color:white;
+	}
+</style>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/slider.js' %}"></script>
+<script>
+	jQuery(document).ready(function(){
+		jQuery(".images").cycle({
+			fx:"fade,turndown,zoom",
+			next:".next",
+			prev:".prev"
+		});
+
+	});
+</script>
+</head>
+<body>
+<img src="{% static 'my/logo.png' %}" class="logo"><br>
+<div class="nav">
+<!-- <img src="{% static 'icons/99.jpg' %}" class="circle">-->
+<center>	
+	{% include 'template/menu2.html'%}
+</center>
+</div>
+</div><br>
+<h2 class="title">  Welcome To The Carrer Expo Panel </h2> 
+</center>
+</div>
+<div class="slider">
+		<div class="images">
+		<img src="{% static 'slider/ap.jpg' %}"  class="go">
+		<img src="{% static 'slider/ap3.jpg' %}"  class="go">
+		<img src="{% static 'slider/9.jpeg' %}"  class="go">
+		<img src="{% static 'slider/slide.jpg' %}"  class="go">
+	</div>
+	</div><br/><marquee><span id="marquee">Online Carrer Expo Portal is a fast growing Website, We Offer All information About All works For New Seekers And Experienced once.</span></marquee><br/>
+	<br/><br/>
+     
+	<div class="search1"><center><h1 id="text">Insightful Analytics</h1><br>
+	<img src="{% static 'search/wel3.jpg' %}" height="180px" width="300px" style="margin-top:-80px"><br><h1 id="text2">Power your bussiness with Insightful analytics<br> Process deep drive for innovative Solution deployement and improved benefits realization...</center></h1></div>
+
+	<div class="search2"><center><h1 id="text">Lending Suite</h1><br>
+	<img src="{% static 'search/j3.jpg' %}" height="180px" width="300px" style="margin-top:-80px"><h1 id="text2">Carrer Expo Lending Suite<br>our robotics Process automation reduction of manual task and provide better opportunities... </h1></center></div>
+
+	<div class="search3"><center><h1 id="text">Knowledge Services</h1><br>
+	<img src="{% static 'search/ap2.jpg' %}" height="180px" width="300px" style="margin-top:-80px"><h1 id="text2">Strengthen Your delivery with inovative Research solutions <br>Delivering long term value terms for job seekers... </h1></center></div><br/><br/><br/>
+	
+	<div class="company"><br><br/><h2 class="head"><center>Company Solutions</center></h2>
+
+    <div class="boxx"><img src="{% static 'companies/l2.png' %}" class="aab"><center>
+     <a href="https://en.wikipedia.org/wiki/Amazon_(company)"><h2 >View Details</h2></a></center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/dark.png' %}" class="aab"> <center>
+	 <a href="http://www.infowiz.co.in/"><h2 >View Details</h2></a></center></div>
+
+     <div class="boxx"><img src="{% static 'companies/l4.png' %}" class="aab"><center>
+     <a href="https://www.cisco.com/c/en_in/index.html"><h2 >View Details</h2></a></center></div>
+
+     <div class="boxx"><img src="{% static 'companies/ibm.png' %}" class="aab"><center>
+     <a href="https://www.ibm.com/in-en"><h2 >View Details</h2></a></center></div>
+
+     <div class="boxx"><img src="{% static 'companies/l6.jpg' %}" class="aab"><center>
+      <a href="https://en.wikipedia.org/wiki/Amazon_(company)"><h2 >View Details</h2></a></center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/info.png' %}" class="aab"><center>
+	 <a href="https://www.infosys.com/"><h2 >View Details</h2></a> </center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/l8.jpg' %}" class="aab"><center>
+      <a href="https://www.baldor.com/brands/baldor-reliance"><h2 >View Details</h2></a></center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/l9.jpg' %}"class="aab"><center>
+	  <a href="https://www.dabur.com"><h2 >View Details</h2></a></center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/wip.jpg' %}" class="aab"><center>
+	  <a href="https://www.wipro.com/"><h2 >View Details</h2></a> </center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/l15.jpg' %}" class="aab"><center>
+	  <a href="https://en.wikipedia.org/wiki/Amazon_(company)"><h2 >View Details</h2></a></center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/mahi.jpg' %}" class="aab"><center>
+	 <a href="https://www.techmahindra.com/pages/default.aspx"><h2 >View Details</h2></a></center></div>
+
+	 <div class="boxx"><img src="{% static 'companies/conzi.jpg' %}" class="aab"><center>
+	 <a href="https://en.wikipedia.org/wiki/Amazon_(company)"><h2 >View Details</h2></a></center></div>
+     </div></div>
+     <div class="slider1"><br><br/><h2 class="head">Top Most Companies</h2><br/><img src="{% static 'my/c.jpg' %}" height="200px" width="300" style="margin-left:30px"><marquee class="scroll"><img src="{% static 'companies/info.png' %}" class="aab"><img src="{% static 'companies/l8.jpg' %}" class="aab"><img src="{% static 'companies/ibm.png' %}" class="aab"><img src="{% static 'companies/l15.jpg' %}" class="aab"><img src="{% static 'companies/conzi.jpg' %}" class="aab"><img src="{% static 'companies/mahi.jpg' %}" class="aab"><img src="{% static 'companies/l2.png' %}" class="aab"><img src="{% static 'companies/dark.png' %}" class="aab"> <br></marquee><img src="{% static 'my/c7.png' %}" height="100px" width="300" style="margin-left:30px"></div>
+	<div class="footer">Copyright-2019 Carrer Expo Services. All Rights Reserved.</div>
+</body>
+</html>

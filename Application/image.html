@@ -1,0 +1,99 @@
+<html>
+<head>
+    <style type="text/css">
+    {% load staticfiles %}
+*{
+    margin:10px 50px;
+}
+.x{
+    height:210px;
+    width:350px;
+    padding:14px;
+    border:1px solid gray;
+    cursor:pointer;
+    transition:2s;
+    margin-left:40px;
+
+}
+.x:hover{
+    filter:blur grayscale(100%);
+    transform:scale(1,1);
+    border:2px solid gray;
+}
+.main{
+    height:100%;
+    width:100%;
+    padding:10px;
+    background:rgba(0,0,0,0.5);
+    position:fixed;
+    z-index:9999;
+    display:none;
+}
+.box{
+    height:10%;
+    width:10%;
+    position:fixed;
+    z-index:99999;
+    margin:130px auto;
+    left:0px;
+    right:0px;
+    display:none;
+}
+.first{
+
+        height:800px;
+        width:100%;
+        padding: 14px;
+        border:5px solid gray;
+        background:#d6e7ec fixed;
+        margin-top:-60px;
+    }
+     #second
+     {
+      font-size:70px;
+      font-weight:bold;
+      text-transform: uppercase;
+     }
+     del{
+     	height:50px;
+     	width:50px;
+     }
+</style>
+<script src="jQuery.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		$(".x").click(function(){
+		$(".main").fadeIn(1000);
+		$(".box").show(1000);
+		$(".del").show(1000);
+		var aa=$(this).attr("src");
+		$("image").attr("src",aa);
+	});
+		$(".del").click(function(){
+	    $(".main").fadeOut(1000);
+	    $(".box").hide(1000);
+		$(".del").hide(1000);
+
+	});
+	});
+</script>
+</head>
+<body>
+<p2 id="second"><center>GALLERY</p2></center><br/>	
+
+<div class="first">
+	<div class="main"></div>
+	<div class="box"></div>
+	<img src="{% static 'gallery/info.jpg' %}" class="x">
+    <img src="{% static 'gallery/hcl.jpg' %}" class="x">
+    <img src="{% static 'gallery/3.jpg' %}" class="x">
+    <img src="{% static 'gallery/is.jpg' %}" class="x">
+    <img src="{% static 'gallery/j3.jpg' %}" class="x">
+    <img src="{% static 'gallery/11.jpg' %}" class="x">
+    <img src="{% static 'gallery/c.jpg' %}" class="x">
+    <img src="{% static 'gallery/3.jpg' %}" class="x">
+    <img src="{% static 'gallery/6.jpg' %}" class="x">
+    </div><br>
+</p2>
+</body>
+</html>

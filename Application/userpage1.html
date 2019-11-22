@@ -1,0 +1,90 @@
+<html>
+<head>
+<style type="text/css">
+{% load staticfiles %}
+	.nav{
+		height:80px;
+		width:100%;
+		margin:0px auto;
+		font-weight:bold; 
+		margin-top:10px;
+		margin-right:80px;	
+	}
+	ol{
+		list-style-type:none;
+		margin-top:-100px;
+		margin-left:150px;
+	}
+	ol>li
+	{
+		display:inline-block;
+		
+	}
+	ol>li>a{
+
+	color:#504444;
+    padding:15px;
+    font-size:18px;
+    height:10px;
+    font-family:monospace;
+    z-index:9999999;
+    text-decoration:none;
+
+	}
+	a:hover{
+		color:gray;
+       text-decoration:underline blue;
+     	}
+	.active{
+   
+    text-decoration:underline blue;
+    
+	}
+	
+    .oo{
+     	font-size:15px;
+     	color:black;
+     	padding:8px;
+     	position:absolute;
+     	border:2px solid lightblue;
+     	border-radius:20px;
+     	background:#c4e5f1d1;
+     	margin-left:-8px;
+     	margin-top:-8px;
+     	text-decoration:none;
+      }
+     
+	
+	p{
+		font-size:12px;
+		font-weight:bold;
+		margin-top: -40px;
+		font-family:cursive;
+	}
+	.logo{
+	height:150px;
+	width:150px;
+	border-radius:50%;
+	margin-top:-20px;
+}
+     
+     
+</style>
+</head>
+<body>
+<img src="{% static 'my/c7.png' %}" class="logo"><p>Job Portal</p><br>
+<div class="nav">
+<center>	
+<ol>
+<li><a href="/companies/" class="active">SHOW COMPANY</a></li>
+<li><a href="/showjobs/" >SHOW JOBS</a></li>
+<li><a href="/showevents/">SHOW EVENT</a>
+<li><a href="/myevent/">MY EVENTS</a></li>
+<li><a href="/editsignup/">EDIT PROFILE</a></li>
+<li><a href="/feed/">FEEDBACK</a></li>
+<a href="/logout/" class="oo">LOGOUT</a><br>
+</ol>
+</center>
+</div>
+</body>
+</html>

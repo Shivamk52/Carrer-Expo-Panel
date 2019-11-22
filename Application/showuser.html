@@ -1,0 +1,32 @@
+<html>
+<head>
+<body>
+	<center><h1>Show All USer</h1>
+	<table height="400px" width="1200px" border="5px " cellspacing="0px">
+		<tr>
+			<th>First-name</th>
+			<th>Last-name</th>
+			<th>Gender</th>
+			<th>Email-Id</th>
+			<th>Qualification</th>
+			<th>District</th>
+			<th>State</th>
+			<th>Pincode</th>
+		</tr>
+		{% for single in alldata %}
+		<tr>
+			<th>{{ single.name }}</th>
+			<th>{{ single.Lname }}</th>
+			<th>{{ single.gender }}</th>
+			<th>{{ single.Email }}</th>
+			<th>{{ single.qual }}</th>
+			<th>{{ single.dist }}</th>
+			<th>{{ single.state }}</th>
+			<th>{{ single.pincode }}</th>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</head>
+</html>

@@ -1,0 +1,116 @@
+<html>
+<head>
+<style>
+{% load staticfiles %}
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+   
+}
+.nav{
+	height:800px;
+	width:800px;
+	background-color:rgba(0,0,0,0.7);
+	color:#fff;
+	top:10%;
+    left:20%;
+    position:absolute;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:30px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:400px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="file"]{
+	margin-left:300px;
+	margin-top:-50px;
+	font-size:23px;
+	font-family:monospace;
+	}
+.mavi input[type="number"]{
+	font-size:20px;
+	width:400px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:20px;
+	font-color:cyan;
+}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-weight:bold;
+	font-color:lightblue;
+	margin-top:-30px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:lightblue;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:30px;
+	margin-left:60px;
+}
+</style>
+</head>
+<body  background="{% static 'gallery/com.jpg' %}" >
+<div class="nav">
+<img src="{% static 'gallery/6.jpg' %}" class="pp"><br/><br><br/><br/>
+	<h1><center>EDIT EVENT</center><h1><br/>
+	{% for single in alldata %}
+	<form action="/final4/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">Company Name:</span>
+	<input type="text" name="t1" value="{{ single.cname }}" class="a">
+	<span class="b">Email id:</span>
+	<input type="text" name="t2" value="{{ single.email }}" class="a" disabled="disabled">
+	<input type="hidden" name="t2" value="{{ single.email }}" class="a">
+	<input type="hidden" name="t21" value="{{ single.id }}" class="a">
+	<span class="b">Event Tittle:</span>
+	<input type="text" name="t3" value="{{ single.tittle }}" class="a">
+	<span class="b">Event Location:</span>
+	<input type="text" name="t4" value="{{ single.Location }}" class="a">
+	<span class="b">Event Profile:</span>
+	<input type="text" name="t5" value="{{ single.Profile }}" class="a">
+	<span class="b">Event Date:</span>
+	<input type="text" name="t6" value="{{ single.date }}" class="a">
+	<span class="b">Qualification:</span>
+	<input type="text" name="t7" value="{{ single.qual }}" class="a">
+	<span class="b">Event Desription:</span>
+	<input type="text" name="t8" value="{{ single.des }}" class="a">
+	<span class="b">Event Holder:</span>
+	<input type="text" name="t9" value="{{ single.holder }}" class="a">
+	<span class="b">Contact no.:</span>
+	<input type="number" name="t10" value="{{ single.con }}" class="a"><br>
+	<span class="b">Choose photo:</span>
+	<input type="file" name="t11" value="{{ single.photo }}" class="a"><br/>
+	<input type="submit" value="SUBMIT">
+	{% endfor %}
+</body>
+</html>

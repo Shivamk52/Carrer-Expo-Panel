@@ -1,0 +1,96 @@
+<html>
+<head>
+<style>
+{% load staticfiles %}
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+   
+}
+body{
+	background-repeat: no-repeat;
+	background-size:100%;
+}
+.nav{
+	height:500px;
+	width:800px;
+	background-color:rgba(0,0,0,0.4);
+	color:#fff;
+	top:15%;
+    left:20%;
+    position:absolute;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:30px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:400px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="file"]{
+	
+	margin-left:300px;
+	margin-top:-50px;
+	padding:30px;
+	font-size:25px;
+    font-family:monospace;
+}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-weight:bold;
+	font-color:lightblue;
+	margin-top:-10px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:lightblue;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:30px;
+	margin-left:60px;
+
+}
+</style>
+</head>
+<body  background="{% static 'my/cam4.jpg' %}" >
+<div class="nav">
+<img src="{% static 'gallery/is.jpg' %}" class="pp"><br/><br><br/><br/>
+	<h1><center>ADD IMAGES</center><h1><br/>
+	<form action="/addimage/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">Company Name:</span>
+	<input type="text" name="t1" value="" class="a required="required"><br>
+	<span class="b">Email Id:</span>
+	<input type="text" name="t2" value="{{ username }}" class="a" disabled="disabled">
+	<input type="hidden" name="t2" value="{{ username }}" class="a"><br>
+	<span class="b">Choose Photo:</span>
+	<input type="File" name="t3" value="" required="required" class="a"><br>
+	<input type="submit" value="SUBMIT">
+</body>
+</html>

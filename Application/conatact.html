@@ -1,0 +1,203 @@
+<html>
+	<head>
+		{% load staticfiles %}
+		<link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css"/>
+		<style type="text/css">
+	
+	.about
+	{
+		height:600px;
+		width:100%;
+		background:url({% static 'gallery/9.jpg' %});
+		margin-top:-20px;
+	}
+    h1
+	{
+		height:470px;
+		width:1100px;
+		margin-left:110px;
+		margin-top:20px;
+		position:absolute;
+		cursor:pointer;
+		padding:20px;
+		text-align:center;
+		font-size:35px;
+	    color:#080202;
+		font-weight:bold;
+     }
+     #image{
+         height:40px;
+         width:40px;
+         margin-top:320px;
+         margin-left:60px;
+         border-radius:50%;
+     }
+     .black{
+
+	height:500px;
+	width:100%;
+	background-color:#c3d9e0d1;
+	color:#fff;
+	border:2px solid lightblue;
+	top:970px;
+    left:0%;
+    position:absolute;
+	}
+	
+
+    #id2{
+	    color:#000;
+		font-size:33px;
+		text-transform: capitalize;
+		margin-left:930px;
+		margin-top:-350px;
+		font-family: -webkit-pictograph;
+
+
+	}
+	.slide{
+		color:#000;
+		font-size:26px;
+		margin-left:30px;
+		margin-top:30px;
+	}
+	.mavi{
+		margin-left:700px;
+		margin-top:-20px;
+		
+
+	}
+     
+.mavi input[type="text"]{
+	font-size:20px;
+	width:250px;
+	height:30px;
+	font-color:cyan;
+	margin-top:5px;
+	padding:22px;
+}
+.mavi input[type="text1"]{
+	font-size:22px;
+	width:490px;
+	height:90px;
+	margin-top:-5px;
+	font-color:cyan;
+	padding:20px;
+}
+
+.mavi input[type="submit"]{
+	font-size:35px;
+	font-weight:bold;
+	width:270px;
+	font-family:EffraLight;
+	background:#EC1075;
+	height:70px;
+	color:white;
+	padding:15px;
+}
+.mavi input[type="submit"]:hover{
+	font-size:35px;
+	background:#EC1075;
+	color:black;
+}
+.footer{
+	height:50px;
+	width:100%;
+	color:#000;
+	text-align:center;
+	font-weight:bold;
+	margin-top:60px;
+	background:#53accad1;
+	font-size:20px;
+}
+h3{
+	
+	font-size:22px;
+	color:#000;
+	margin-top:30px;
+}
+.links{
+	height:300px;
+	width:340px;
+	padding:1px;
+	border-left:1px solid gray;
+	border-right:1px solid gray;
+	border-top:1px solid #c4e5f1d1;
+	border-bottom:1px solid red;
+	background:#d2e3e8d1;
+	border-bottom:1px solid #c4e5f1d1;
+	font-family:serif;
+	font-size:20px;
+	text-align:center;
+	color:#2b2424;
+	margin-left:350px;
+	margin-top:-160px;
+}
+.links ol{
+	text-decoration:none;
+	list-style-type: none;
+		font-family:serif;
+}
+p{
+		font-size:12px;
+		font-weight:bold;
+		margin-top: -40px;
+		font-family:cursive;
+	}
+	.logo{
+	height:150px;
+	width:150px;
+	border-radius:50%;
+	margin-top: -10px;
+
+}
+span{
+	margin-top:10px;
+	font-size:30px;
+	margin-left: 20px;
+	font-family:serif;
+	font-weight: bold;
+}
+ </style>
+</head>
+<body>
+<img src="{% static 'my/logo.png' %}" class="logo"><br>
+<div class="nav">
+<!-- <img src="{% static 'icons/99.jpg' %}" class="circle">--> 
+<center>
+	{% include 'template/menu2.html'%}
+</center>
+</div>
+</div>
+<div class="about"></div>
+<span><center>About Us</center></span>
+<h3><center>Online job fair portal is a website provides the candidate ability to register on website and search for jobs ,can apply for Jobs and events according To His/her qualification Manage their accounts.Each candidate will have an account with their 
+own home page.pupose of website is to job fair portal for seekers,to submit their CV and apply for job & event,where Employer can select best employees from available candidates profile.</center></h3><br>
+
+<div class="black">
+	<br/>
+				<h3><center>If You Have Some Questions And Need Help!. Please Contact Us Directly, Don't Hesitate!<br>
+		                 Our Team Will Come Back To You Within Couple Of Hours To Help You.</h3><br></BR></center>
+		<address class="slide"><br>SCO 144-145, Fourth Floor<br>9050261146<br>info@carrerexpo.com<br>Delhi , India.
+		</address><br><br/>
+
+<div class="links"><ol>
+			<li><b>Other Links</b></li><br><br/>
+			<li><a href="/about/">About Us</a></li><br>
+			<li><a href="/may/">Gallery</a></li><br>
+            <li><a href="/code/" >Login</a></li><br>
+			<li><a href="/signup/">SignUp</a></li><br>
+			<li><a href="/feedback/">Contact Us</a></li></ol><br>
+		</div>
+				<h2 id="id2">FeedBack</h2><br/><br/>
+		<center>
+		<form action="/feedbackcode/" method="POST" class="mavi">
+		{% csrf_token %}
+		<input type="text" value="" placeholder="Your Name" name="t1">
+		<input type="text" value="" placeholder="Your Email" name="t2"><br><br/>
+		<input type="text1" value="" placeholder="Your Message Here...." name="t3"><br><br/>
+		<input type="submit" value="Send Feed">
+	</form><br/>
+	<div class="footer">Copyright-2019 Carrer Expo Services. All Rights Reserved.</div>
+</body>
+</html>

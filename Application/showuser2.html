@@ -1,0 +1,83 @@
+<html>
+<head>
+<style type="text/css">
+{% load staticfiles %}
+	
+	h1{
+		color:gray;
+		font-size:40px;
+		margin-top:40px;
+		text-transform: capitalize;
+	}
+	.comm{
+	
+		height:300px;
+		width:100%;	
+		position:relative;
+		margin-left:5px;
+		margin-top:-10px;
+	}
+</style>
+</head>
+<body>
+	{% include 'template/comm2.html'%}
+		<img src="{% static 'my/cam11.png' %}" class="comm">
+	<center><h1>Show All User</h1>
+		<style type="text/css">
+			table{
+				color: gray;
+				font-family:sans-serif;
+				height:400px;
+				width:100%;
+				border:1px solid lightblue;
+				font-size:20px;
+				font-family:cursive;
+			}
+			th{
+				border:2px solid lightblue;
+				color:black;
+			}
+			td{
+               color:black;
+               border:2px solid lightblue;
+               text-align: center;
+               font-size:18px;
+               font-family:serif;
+			}
+			tr:nth-child(odd){
+				background-color:lightblue;
+				height: 50px;
+			}
+			tr:nth-child(even){
+				background-color: lightgray;
+				height: 50px;
+			}
+		</style>
+	<table height="400px" width="1200px" border="5px " cellspacing="0px" bgcolor="lightgray">
+		<tr>
+			<th>First-name</th>
+			<th>Last-name</th>
+			<th>Gender</th>
+			<th>Email-Id</th>
+			<th>Qualification</th>
+			<th>State</th>
+			<th>Pincode</th>
+			<th>Photo</th>
+		</tr>
+		{% for single in alldata %}
+		<tr>
+			<td>{{ single.name }}</td>
+			<td>{{ single.Lname }}</td>
+			<td>{{ single.gender }}</td>
+			<td>{{ single.Email }}</td>
+			<td>{{ single.qual }}</td>
+			<td>{{ single.Location }}</td>
+			<td>{{ single.Pincode }}</td>
+			<td><img src="{{ single.photo.url }}" height="50" width="50"></th>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</head>
+</html>

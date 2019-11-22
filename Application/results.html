@@ -1,0 +1,108 @@
+<html>
+<head>
+<style>
+{% load staticfiles %}
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+   
+}
+.nav{
+	height:600px;
+	width:800px;
+	background-color:rgba(0,0,0,0.7);
+	color:#fff;
+	top:10%;
+    left:20%;
+    position:absolute
+
+    ;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:30px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:400px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="text1"]{
+	font-size:15px;
+	width:400px;
+	height:90px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="number"]{
+	font-size:20px;
+	width:400px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:20px;
+	font-color:cyan;
+}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-weight:bold;
+	font-color:lightblue;
+	margin-top:-30px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:lightblue;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:30px;
+	margin-left:60px;
+}
+</style>
+</head>
+<body  background="{% static 'gallery/9.jpg' %}" >
+	{% for single in data %}
+<div class="nav">
+<img src="{% static 'gallery/99.jpg' %}" class="pp"><br/><br><br/><br/>
+	<h1><center>RESULTS</center><h1><br/>
+	<form action="/resultcode/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">Events Tittle:</span>
+	<input type="text" name="t1" value="{{ single.tittle }}" class="a" disabled="disabled">
+	<input type="hidden" name="t1" value="{{ single.tittle }}" class="a">
+	<span class="b">Event-Id:</span>
+	<input type="text" name="t2" value="{{ single.id }}" class="a" disabled="disabled">
+	<input type="hidden" name="t2" value="{{ single.id }}" class="a">
+	<span class="b">No. Of Persons</span>
+	<input type="text" name="t3"  value="" required="required" class="a">
+	<span class="b">Salary:</span>
+	<input type="number" name="t4"  value=""  required="required" class="a">
+	<span class="b">Message:</span>
+	<input type="text1" name="t5"  value="" required="required"  class="a"><br><br/>
+	<input type="submit" value="SUBMIT">
+	{% endfor %}
+</body>
+</html>

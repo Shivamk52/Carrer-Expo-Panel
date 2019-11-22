@@ -1,0 +1,100 @@
+<html>
+<head>
+	{% load staticfiles %}
+	<style type="text/css">
+	body{
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+		h1{
+		color:#232020d1;
+		font-size:50px;
+		margin-top:490px;
+		text-transform: capitalize;
+	}
+
+		table{
+			height:500px;
+			width:100%;
+			margin-top:20px;
+			border:5px solid gray;
+			color:black;
+            border:5px gray;
+			font-size:20px;
+			font-family:serif;
+			}
+			th{
+				border-left: :1px solid lightblue;
+				border-top:1px solid lightblue;
+				border-right:1px solid lightblue;
+			    border-bottom:2px solid black;
+				font-size:22px;
+			}
+			td{
+               color:black;
+				border-left:1px solid lightgray;
+				border-top:1px solid lightgray;
+				border-right:1px solid lightgray;
+			    border-bottom:1px solid black;
+			    border-collapse: 0px;
+               text-align: center;
+               font-size:20px;
+			}
+			tr:nth-child(odd){
+				background-color:lightblue;
+				height:20px;
+			}
+			tr:nth-child(even){
+				background-color: lightgray;
+				height:20px;
+			}
+     
+	.comm{
+		background-repeat:no-repeat;
+		height:400px;
+		width:100%;	
+		position:absolute;
+		margin-left:-5px;
+		margin-top:-23px;
+	}
+	h1{
+		color:gray;
+		font-size:40px;
+		margin-top:400px;
+		text-transform: capitalize;
+	}
+	
+</style>
+</head>
+<body>
+{% include 'template/userpage1.html'%}
+
+<img src="{% static 'my/c4.jpg' %}" class="comm">
+	<center><h1>Registered Companies</h1>
+	<table cellspacing="0px">
+		<tr>
+			<th>Company-Name</th>
+			<th>Contact-Name</th>
+			<th>Email-Id</th>
+			<th>Contact No.</th>
+			<th>City</th>
+			<th>Photo</th>
+			
+	
+		</tr>
+		{% for single in alldata %}
+		<tr>
+			<td>{{ single.comname }}</td>
+			<td>{{ single.conname }}</td>
+			<td>{{ single.Email }}</td>
+			<td>{{ single.contact}}</td>
+			<td>{{ single.city }}</td>
+			<td><img src="{{ single.Photo.url }}" height="100" width="100" style="border-radius:50%"></th>
+		</tr>
+		{% endfor %}
+		
+	</table>
+	</center>
+</body>
+</head>
+</html>

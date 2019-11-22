@@ -1,0 +1,147 @@
+<html>
+<head>
+<style>
+	{% load staticfiles %}
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+    text-decoration: none;
+}
+.nav{
+	height:730px;
+	width:800px;
+	background-color:#EC1075;
+	color:#fff;
+	top:10%;
+    left:20%;
+    position:absolute
+
+    ;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:30px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:300px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:black;
+	color:black
+;
+}
+.mavi input[type="number"]{
+	font-size:20px;
+	width:300px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:20px;
+	font-color:black;
+}
+
+.mavi input[type="password"]{
+	font-size:20px;
+	margin-left:300px;
+	margin-top:-30px;
+	width:300px;
+	height:30px;
+}
+
+.mavi input[type="radio"]{
+	font-size:20px;
+	width:20px;
+	margin-top:-30px;
+	height:30px;
+	margin-left:110px;
+}
+.mavi input[type="file"]{
+
+     margin-left:280px;
+     margin-top:-50px;
+     font-size:25px;
+	font-family:EffraLight;
+	}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-family:EffraLight;
+	font-weight:bold;
+	background: #EC1075;
+	color:white;
+	margin-top:-30px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:#EC1075;
+	color:black;
+	}
+	.mavi{
+		font-size: 20px;
+		color: black;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:28px;
+	margin-left:60px;
+	color:#494649;
+	border-radius:10px;
+}
+body{
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.title{
+	font-family:EffraLight;
+	color:#494649;
+}
+</style>
+</head>
+<body  background="{% static 'gallery/9.jpg' %}" >
+<div class="nav">
+<img src="{% static 'gallery/99.jpg' %}" class="pp"><br/><br><br/><br/>
+	<div class="title"><h1><center>SIGN UP HERE</center><h1><br/></div>
+	<form action="/regcode/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">First Name:</span>
+	<input type="text" name="t1"  value="" class="a" size="30" required="required">
+	<span class="b">Last Name:</span>
+	<input type="text" name="t2"  value="" class="a" required="required"><br>
+	<span class="b">Gender:</span>
+	<input type="radio" name="t3"  value="male" required="required" > Male
+	<input type="radio" name="t3"  value="female" required="required">Female<br>
+	<br/><span class="b">Email-ID:</span>
+	<input type="text" name="t4"  value="" class="a" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+	<span class="b">Password:</span>
+	<input type="password" name="t5"  value="" class="a" pattern=".{6,}" title="Six or more characters">
+	<span class="b">Qualification:</span>
+	<input type="text" name="t6"  value="" class="a" required="required">
+	<span class="b">Location:</span>
+	<input type="text" name="t7"  value="" class="a" required="required">
+	<span class="b">Pin Code:</span>
+	<input type="number" name="t8"  value="" class="a" required="required"><br>
+	<span class="b">Choose photo:</span>
+	<input type="file" name="t9"  value="" class="a" required="required"><br>
+	<input type="submit" value="SUBMIT">
+</body>
+</html>

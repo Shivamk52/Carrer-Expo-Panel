@@ -1,0 +1,88 @@
+<html>
+<head>
+    {% load staticfiles %}
+	<link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css"/>
+	<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css"/>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery(".x").click(function(){
+		var data=$(this).attr("src");
+		$(".main").show();
+		$(".box").fadeIn<(1000);
+		$(".img").attr("src",data);
+	});
+		jQuery(".main").click(function(){
+		   $(".main").hide();
+		   $(".box").hide(1000);
+	});
+
+});	
+</script>
+<style type="text/css">
+*{
+	margin:0px;
+}
+.x{
+	height:220px;
+	width:220px;
+	padding:14px;
+	transition:filter 1s;
+	cursor:pointer;
+	margin-left:55px;
+	filter:blur(1px);
+}
+.x:hover{
+	filter:blur(0px);
+	height:500px;
+	width:500px;
+	transition: 2s;
+	border:5px solid gray;
+}
+.main{
+	height:100%;
+	width:100%;
+	background:rgba(0,0,0,0.5);
+	position:fixed;
+	z-index:9999;
+	display:none;
+}
+.box{
+	height:10%;
+	width:10%;
+	position:fixed;
+	z-index:99999;
+	margin:130px auto;
+	left:0px;
+	right:0px;
+	display:none;
+}
+.img{
+	height:100%;
+	width:100%;
+	position: fixed;
+
+	
+}
+</style>
+</head>
+<body>
+	<div class="main"></div>
+	<div class="box">
+		<img src="6.jpg" class="img">
+	</div>
+	<img src="{% static 'gallery/l4.png' %}" class="x">
+    <img src="{% static 'gallery/hcl.jpg' %}" class="x">
+    <img src="{% static 'gallery/3.jpg'  %}" class="x">
+    <img src="{% static 'gallery/is.jpg' %}" class="x">
+    <img src="{% static 'gallery/12.jpg' %}" class="x">
+    <img src="{% static 'gallery/11.jpg' %}" class="x">
+    <img src="{% static 'gallery/c.jpg' %}" class="x">
+    <img src="{% static 'gallery/6.jpg' %}" class="x">
+    <img src="{% static 'gallery/5.jpg' %}" class="x">
+    <img src="{% static 'gallery/3.jpg' %}" class="x">
+    <img src="{% static 'gallery/12.jpg' %}" class="x">
+    <img src="{% static 'gallery/4.jpg' %}" class="x">
+</body>
+</html>

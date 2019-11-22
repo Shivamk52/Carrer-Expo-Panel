@@ -1,0 +1,113 @@
+<html>
+<head>
+<style>
+{% load staticfiles %}
+*{
+
+    margin:0;
+    padding:0;
+    background:cover;
+   
+}
+.nav{
+	height:700px;
+	width:800px;
+	background-color:rgba(0,0,0,0.4);
+	color:#fff;
+	top:10%;
+    left:20%;
+    position:absolute;
+}
+.pp{
+	height:150px;
+	width:150px;
+    position:absolute;
+	margin-left:320px;
+	border-radius:50%;
+	margin-top:-80px;
+	}
+h1{
+
+	font-size:30px;
+	font-color:lightblue;
+}
+.mavi input[type="text"]{
+	font-size:15px;
+	width:400px;
+	height:30px;
+	margin-top:-30px;
+	margin-left:300px;
+	font-color:cyan;
+}
+.mavi input[type="file"]{
+	margin-left:300px;
+	margin-top:-50px;
+	font-size:23px;
+	font-family:monospace;
+	}
+.mavi input[type="number"]{
+	font-size:20px;
+	width:400px;
+	margin-left:300px;
+	margin-top:-30px;
+	height:20px;
+	font-color:cyan;
+}
+.mavi input[type="submit"]{
+	font-size:25px;
+	width:300px;
+	margin-left:300px;
+	margin-top:20px;
+	font-weight:bold;
+	font-color:lightblue;
+	margin-top:-30px;
+	cursor:pointer;
+	height:30px;
+	border-radius:10px;
+	padding:10px 20px 41px 10;
+}
+.mavi input[type="submit"]:hover{
+	background:lightblue;
+	}
+.a{
+	display: block;
+	padding: 20px !important;
+}
+.b{
+	font-size:25px;
+	margin-left:60px;
+}
+</style>
+</head>
+<body  background="{% static 'gallery/com.jpg' %}" >
+<div class="nav">
+<img src="{% static 'gallery/6.jpg' %}" class="pp"><br/><br><br/><br/>
+	<h1><center>ADD EVENT</center><h1><br/>
+	<form action="/event/" method="POST" enctype="multipart/form-data" class="mavi">
+	{% csrf_token %}
+	<span class="b">Company Name:</span>
+	<input type="text" name="t1" value="" class="a">
+	<span class="b">Email id:</span>
+	<input type="text" name="t2" value="{{ username }}" class="a" disabled="disabled">
+	<input type="hidden" name="t2" value="{{ username }}" class="a">
+	<span class="b">Event Tittle:</span>
+	<input type="text" name="t3" value="" class="a">
+	<span class="b">Event Location:</span>
+	<input type="text" name="t4" value="" class="a">
+	<span class="b">Event Profile:</span>
+	<input type="text" name="t5" value="" class="a">
+	<span class="b">Event Date:</span>
+	<input type="text" name="t6" value="" class="a">
+	<span class="b">Qualification:</span>
+	<input type="text" name="t7" value="" class="a">
+	<span class="b">Event Desription:</span>
+	<input type="text" name="t8" value="" class="a">
+	<span class="b">Event Holder:</span>
+	<input type="text" name="t9" value="" class="a">
+	<span class="b">Contact no.:</span>
+	<input type="number" name="t10" value="" class="a"><br>
+	<span class="b">Choose photo:</span>
+	<input type="file" name="t11" value="" class="a"><br/>
+	<input type="submit" value="SUBMIT">
+</body>
+</html>

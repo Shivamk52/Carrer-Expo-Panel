@@ -1,0 +1,181 @@
+<html>
+<head>
+<style type="text/css">
+{% load staticfiles %}
+	.nav{
+		height:80px;
+		width:100%;
+		margin:0px auto;
+		font-weight:bold; 
+		margin-top:10px;
+		margin-right:80px;	
+	}
+	ol{
+		list-style-type:none;
+		margin-top:-100px;
+		margin-left:170px;
+	}
+	ol>li
+	{
+		display:inline-block;
+		
+	}
+	ol>li>a{
+
+	color:#504444;
+    padding:15px;
+    font-size:18px;
+    height:10px;
+    font-family:monospace;
+    z-index:9999999;
+    text-decoration: none;
+
+	}
+	a:hover{
+       text-shadow:black;
+       text-decoration:underline blue;
+     	}
+	.active{
+   
+    text-decoration:underline blue;
+    
+	}
+	
+    .oo{
+     	font-size:15px;
+     	padding:8px;
+     	border:2px solid lightblue;
+     	border-radius:20px;
+     	color:black;
+     	background:#c4e5f1d1;
+     	margin-left:30px;
+     	text-decoration:none;
+      }
+      .title {
+	  z-index: 9999;
+      font-size:59px;
+      margin-top:320px;
+      text-shadow: 2px 2px 4px black;
+      position:relative;
+      margin-left:240px;
+      color:black;
+	}
+	.p{
+		height:130px;
+		width:150px;
+		font-weight:bold;
+		border-radius: 50%;
+	
+	}
+	.com{
+	
+		height:500px;
+		width:100%;	
+		position:relative;
+		margin-left:-170px;
+		margin-top:50px;
+	}
+	
+     .tittle 
+	 {
+	  z-index: 9999;
+      font-size:69px;
+      margin-top:-280px;
+      text-shadow: 2px 2px 4px white;
+      position:relative;
+      margin-left:-1200px;
+      text-transform: capitalize;
+      color:black;
+	}
+	#w{
+		font-size:110px;
+	}
+	#c{
+		font-size:30px;
+		margin-left:1000px;
+	
+	}
+	.round{
+
+		height:400px;
+        position:absolute;
+		width:25%;
+		top:180px;
+		left:750;
+		z-index: 9999;
+		border-radius:50%;
+	}
+	.sub2{
+
+	position:absolute;
+	list-style-type:none;
+	display: none;
+}
+.sub2>li>a{
+	color:#504444;
+	background:white;
+	text-decoration: none;
+	padding:8px;
+	font-size:18px;
+	display:block;
+	font-family:monospace;
+	margin-left:-42px;
+	border-radius: 5%;
+}
+.sub2>li>a:hover{
+	background:white;
+	color:gray;
+	text-decoration:underline;
+
+}
+ol>li:hover .sub2{
+	display:block;
+}
+
+	.comm{
+	
+		height:500px;
+		width:100%;	
+		position:relative;
+		margin-left:5px;
+		margin-top:-10px;
+	}
+	p{
+		font-size:12px;
+		font-weight:bold;
+		margin-top: -40px;
+		font-family:cursive;
+	}
+	.logo{
+	height:150px;
+	width:150px;
+	border-radius:50%;
+}
+</style>
+</head>
+<body>
+<img src="{% static 'my/logo.png' %}" class="logo">
+<div class="nav">
+<center>	
+<ol>
+<li><a href="/add/" class="active">ADD JOB</a>
+    <ul class="sub2">
+	<li><a href="/showjobs2/">SHOW JOBS</a></li>
+   </ul>
+</li>
+<li><a href="/profile/" >ADD EVENT</a>
+    <ul class="sub2">
+	<li><a href="/showeventscom/">SHOW EVENTS</a></li>
+   </ul>
+</li>
+<li><a href="/account/">EDIT PROFILE</a></li>
+<li><a href="/editprofile/">ADD IMAGES</a></li>
+<li><a href="/showuser2/">SHOW STUDENTS</a></li>
+<li><a href="/showresults/">RESULTS</a></li
+</ol>
+<a href="/logout1/" class="oo">LOGOUT</a><br>
+</center>
+</div>
+</div>
+</body>
+</html>
